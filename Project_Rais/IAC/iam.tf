@@ -35,20 +35,6 @@ resource "aws_iam_policy" "lambda" {
                 "logs:PutLogEvents"
             ],
             "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:*"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Effect": "Allow",
-            "Action":[
-                "elasticmapreduce:*"   
-            ],
-            "Resource": "*"
         }
     ]
 }
