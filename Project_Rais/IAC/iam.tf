@@ -19,16 +19,16 @@ resource "aws_iam_role" "lambda" {
 }
 
 resource "aws_iam_policy" "lambda" {
- name = "LambdaBasicExecutionRolePolicy"
+ name = "LambdaBasicExecutionRolePolicy_"
  path = "/"
  description = "Provides write permissions to CloudWatch Logs, S3 buckets and EMR Steps"
 
  policy = <<EOF
  {
-    "Version" : "2012-10-17",
+    "Version": "2012-10-17",
     "Statement": [
         {
-            "Effect" : "Allow",
+            "Effect": "Allow",
             "Action": [
                 "logs:CreateLogGroup",
                 "logs:CreateLogStream",
