@@ -20,11 +20,11 @@ enem = (
 )
 
 
-(
-       enem
-       .write
-       .mode("overwrite")
-       .format("parquet")
-       .partitionBy("ano")
-       .save("s3://datalake-engenharia-dados/consumer-zone/rais")
-)
+# (
+#        enem
+#        .write
+#        .mode("overwrite")
+#        .format("parquet")
+#        .partitionBy("ano")
+#        .save("s3://datalake-engenharia-dados/consumer-zone/rais")
+# )
