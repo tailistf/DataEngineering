@@ -3,7 +3,7 @@ variable "aws_region" {
 }
 
 variable "base_bucket_name" {
-  default="datalake-ed-code"
+  default="datalake-ed-code_tf"
   }
 
   variable "environment" {
@@ -12,4 +12,9 @@ variable "base_bucket_name" {
 
   variable "account_number" {
     default = 323411527375
+  }
+
+
+  variable "lambda_function_name" {
+    default = "ExecuteEMR"
   }
