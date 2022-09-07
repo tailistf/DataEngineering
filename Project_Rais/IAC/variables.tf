@@ -3,7 +3,7 @@ variable "aws_region" {
 }
 
 variable "base_bucket_name" {
-  default="datalake-ed-code_tf"
+  default="datalake-ed-code-tf"
   }
 
   variable "environment" {

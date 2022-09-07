@@ -2,6 +2,10 @@ resource "aws_s3_bucket" "datalake"{
     bucket= var.base_bucket_name
 }
 
+resource "aws_s3_bucket" "datalake"{
+    bucket= var.base_bucket_name
+}
+
 resource "aws_s3_bucket_acl" "aws_bucket_acl" {
   bucket = aws_s3_bucket.datalake.id
   acl    = "private"
