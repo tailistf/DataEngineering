@@ -19,25 +19,35 @@ resource "aws_iam_role" "lambda" {
 }
 
 resource "aws_iam_policy" "lambda" {
- name = "LambdaBasicExecutionRolePolicy_"
- path = "/"
- description = "Provides write permissions to CloudWatch Logs, S3 buckets and EMR Steps"
+  name = "LambdaBasicExecutionRolePolicy_"
+  path = "/"
+  description = "Provides write permissions to CloudWatch Logs, S3 buckets and EMR Steps"
 
- policy = <<EOF
- {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "logs:CreateLogGroup",
-                "logs:CreateLogStream",
-                "logs:PutLogEvents"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
+  policy = <<EOF
+{
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Action": "iam:PassRole",
+                "Resource": [
+                    "arn:aws:iam::323411527375:role/EMR_DefaultRole",
+                    "arn:aws:iam::323411527375:role/EMR_EC2_DefaultRole"
+                ]
+            },
+            {
+                "Effect": "Allow",
+                "Action": [
+                    "s3:*",
+                    "elasticmapreduce:*",
+                    "logs:CreateLogGroup",
+                    "logs:CreateLogStream",
+                    "logs:PutLogEvents"
+                ],
+                "Resource": "*"
+            }
+        ]
+ }
 EOF
 }
 
