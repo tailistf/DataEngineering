@@ -24,8 +24,8 @@ resource "aws_iam_policy" "lambda" {
  description = "Provides write permissions to CloudWatch Logs, S3 buckets and EMR Steps"
 
  policy = <<EOF
-{
-    "Verison" : "2012-10-17",
+ {
+    "Version" : "2012-10-17",
     "Statement": [
         {
             "Effect" : "Allow",
