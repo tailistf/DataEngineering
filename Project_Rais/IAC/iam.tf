@@ -47,7 +47,7 @@ resource "aws_iam_policy" "lambda" {
             "Effect": "Allow",
             "Action":[
                 "elasticmapreduce:*"   
-            ]
+            ],
             "Resource": "*"
         },
         {
