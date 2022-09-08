@@ -1,6 +1,6 @@
 resource "aws_glue_job" "glue_job_rais" {
+  glue_version = "3"
   name     = "glue_job_rais"
-  glue_version = "AWS Glue 3.0"
   worker_type = "G.1X"
   number_of_workers = 10
   role_arn = "arn:aws:iam::323411527375:role/AWSGlueServiceRole_edc2"
@@ -8,10 +8,11 @@ resource "aws_glue_job" "glue_job_rais" {
 
   command {
     script_location = "s3://${aws_s3_bucket.datalake.id}/emr-code/pyspark/job_spark_from_tf.py"
+    python_version  = "3"
   }
 
   default_arguments = {
-    "--job-language" = "Python 3"
+    "--job-language" = "python"
   }
 
 }
