@@ -3,6 +3,7 @@ resource "aws_glue_job" "glue_job_rais" {
   name     = "glue_job_rais"
   worker_type = "G.1X"
   number_of_workers = 10
+  max_retries = 3
   role_arn = "arn:aws:iam::323411527375:role/AWSGlueServiceRole_edc2"
 
 

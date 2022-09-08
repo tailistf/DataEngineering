@@ -1,12 +1,24 @@
 
-from pyspark.sql import functions as f
-from pypark.sql import SparkSession
+# from pyspark.sql import functions as f
+# from pypark.sql import SparkSession
 
-spark=(
-     SparkSession.builder.appName('Spark_Rais')
-     .getOrCreate()
-)
+# spark=(
+#      SparkSession.builder.appName('Spark_Rais')
+#      .getOrCreate()
+# )
 
+from awsglue.context import GlueContext
+from awsglue.job import Job
+
+## @params: [JOB_NAME]
+args = getResolvedOptions(sys.argv, ['JOB_NAME'])
+
+sc = SparkContext()
+glueContext = GlueContext(sc)
+spark = glueContext.spark_session
+job = Job(glueContext)
+job.init(args['JOB_NAME'], args)
+job.commit()
 
 
 rais = (
