@@ -14,6 +14,6 @@ resource "aws_glue_trigger" "example" {
   start_on_creation  = True
 
   actions {
-    job_name = aws_glue_job.example.name
+    job_name = aws_glue_job.glue_job_rais.name
   }
 }
