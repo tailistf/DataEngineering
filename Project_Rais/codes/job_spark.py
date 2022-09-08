@@ -1,5 +1,5 @@
 
-# from pyspark.sql import functions as f
+#
 # from pypark.sql import SparkSession
 
 # spark=(
@@ -12,6 +12,7 @@ from awsglue.utils import getResolvedOptions
 from pyspark.context import SparkContext
 from awsglue.context import GlueContext
 from awsglue.job import Job
+from pyspark.sql import functions as f
 
 ## @params: [JOB_NAME]
 args = getResolvedOptions(sys.argv, ['JOB_NAME'])
