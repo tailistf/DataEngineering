@@ -1,5 +1,5 @@
 resource "aws_glue_job" "glue_job_rais" {
-  glue_version = "3"
+  glue_version = "3.0"
   name     = "glue_job_rais"
   worker_type = "G.1X"
   number_of_workers = 10
