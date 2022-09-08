@@ -7,11 +7,11 @@ resource "aws_glue_job" "glue_job_rais" {
   }
 }
 
-resource "aws_glue_trigger" "example" {
-  name     = "example"
+resource "aws_glue_trigger" "glue_trigger_rais" {
+  name     = "glue_trigger_rais"
   schedule = "cron(0 8 1 9 ? 2022)"
   type     = "SCHEDULED"
-  start_on_creation  = True
+  start    = true
 
   actions {
     job_name = aws_glue_job.glue_job_rais.name
